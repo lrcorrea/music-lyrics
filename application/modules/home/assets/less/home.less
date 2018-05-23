@@ -1,0 +1,205 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/*
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}*/
+
+@keyframes spinner {
+    0% {transform: translate(-50%, -50%) rotate(0deg);}
+    100% {transform: translate(-50%, -50%) rotate(359deg)}
+}
+
+body{
+	padding: 0px;
+	margin: 0px;
+}
+
+#gradient{
+  width: 100%;
+  height: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+}
+
+*{
+	outline: none;
+	box-sizing: border-box;
+}
+ 
+#pin{ 
+	width: 100%;
+	max-width: 300px; 
+	height: auto;  
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	
+	.form{ 
+		position: relative;
+		width: 100%;
+		display: block;
+		
+		input{
+			position: relative;
+			width: 100%;
+			height: 45px;
+			padding: 15px 115px 15px 15px;
+			border-radius: 5px;
+			color: #FFF;
+			border: 0px;  
+			background-color: #333;
+			box-sizing: border-box;
+			transition: border .4s, box-shadow .4s, margin-top .4s;
+			
+			::-webkit-input-placeholder {
+				color: #FFF; 
+			}
+			::-moz-placeholder {
+				color: #FFF;
+			}
+			:-ms-input-placeholder {
+				color: #FFF;
+			}
+			:-moz-placeholder {
+				color: #FFF;
+			}
+			
+			&:focus{
+				box-shadow: inset 0 0 0 2px #FFF;
+			}
+
+			&.input-hide{
+				position: absolute;
+				left: 0;
+				bottom: -47px; 
+				opacity: 0;
+				transition: transform .4s, opacity .4s;
+				transform: translateY(3rem); 
+			}
+		}
+
+		.submit{
+			display: block;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: 100px;
+			height: 45px;
+			border: 0px;
+			text-align: center;
+			box-sizing: border-box;
+			background-color: #FFF;
+			border-radius: 0 5px 5px 0;
+			text-transform: uppercase;
+			cursor: pointer;
+			-webkit-backface-visibility: hidden;
+			transition: color .4s, background-color .4s, bottom .4s;
+
+			span{
+				font-weight: 700;
+				font-size: 12px;
+				color: #333;
+				transition: color .4s, opacity .4s;
+			}
+
+			&:after{
+				content: '';
+				width: 2rem;
+				height: 2rem;
+				position: absolute;
+				opacity: 0;
+				left: 50%;
+				top: 50%;
+				border-radius: 50%;
+				box-shadow: 0 2px 0 0 #333;
+				transition: opacity .4s, box-shadow .4s; 
+				animation: spinner 1s linear infinite;
+				transform: translate(-50%, -50%);
+			}
+
+			&.loading{
+				span{
+					opacity: 0;
+				}
+
+				&:after{
+					opacity: 1
+				}
+			}
+
+			&:hover{
+				background-color: #333;
+
+				span{
+					color: #FFF;
+				}
+
+				&:after{
+					box-shadow: 0 2px 0 0 #FFF;
+				}
+			}
+		}
+
+		&.show-input{
+			input[name="pin"]{ 
+				margin-top: -47px;
+			}
+
+			.input-hide{
+				transform: translateY(0);
+				opacity: 1;
+			}
+
+			.submit{
+				bottom: -46px;
+			}
+		}
+	}
+}
