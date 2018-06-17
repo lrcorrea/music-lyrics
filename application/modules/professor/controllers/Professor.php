@@ -31,6 +31,11 @@ class Professor extends CI_Controller {
 
     public function login()
     {
+        $this->load->helper('cookie');
+        if(get_cookie('notari_eh_deiz')){
+            echo '<pre>';die(var_dump(get_cookie('notari_eh_deiz')));
+        }
+
         $this->load->view('login');
     }
 
@@ -48,7 +53,10 @@ class Professor extends CI_Controller {
                 'SENHAPROFESSOR' => '*'.md5($this->input->post('SENHAPROFESSOR')).'*'
             ));
 
-            echo '<pre>';die(var_dump($professor));
+            if(is_array($professor) && count($professor) > 0){
+                $this->load->helper('cookie');
+                set_cookie('notari_eh_deiz', serialize($professor), 18000, base_url(), '/');
+            }
 
         } else {
             $errors = array_values($this->form_validation->error_array());

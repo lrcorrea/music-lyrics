@@ -18,7 +18,7 @@ $(document).ready(function() {
     }
 
     $.ajax({
-      url: base_url + 'professor/cadastrar',
+      url: base_url + 'professor/entrar',
       type: 'POST',
       dataType: 'json',
       data: $('.form').serialize(),
