@@ -26,13 +26,22 @@ $(document).ready(function() {
 
     if(xhr) xhr.abort();
 
-    if($('.form input[name=pin]').val().length < 5){
-      $('.form').addClass('error');
-      return false;
+    // if($('.form input[name=pin]').val().length < 5){
+    //   $('.form').addClass('error');
+    //   return false;
+    // }
+
+      if ($('.form input[name=pin]').val().length == 5 && $('.form input[name=name]').val().length == 0) {
+        // $('.form').addClass('error');
+        $('.form').addClass('show-input');
+        $('.form input[name=name]').attr('required', true);
+        $('.form input[name=pin]').attr('readonly', true);
+        $('.form input[name=pin]').attr('disabled', true);
+        return false;
     }
 
     $.ajax({
-      url: base_url + 'home/verify_pin',
+        url: base_url + 'home/verifyPin',
       type: 'POST',
       dataType: 'json',
       data: $('.form').serialize(),
@@ -45,10 +54,6 @@ $(document).ready(function() {
       success: function(data){
         console.log(data);
         if(data.status && data.is_valid){
-          $('.form').addClass('show-input');
-          $('.form input[name=name]').attr('required', true);
-          $('.form input[name=pin]').attr('readonly', true);
-          $('.form input[name=pin]').attr('disabled', true);
         }
       },
       error: function(){

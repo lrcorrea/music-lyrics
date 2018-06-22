@@ -22,6 +22,6 @@
 	</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-<script src="<?php echo base_url() . 'application/modules/home/assets/js/home.js?v=0.2'; ?>"></script>
+<script src="<?php echo base_url() . 'application/modules/home/assets/js/home.js?v='.time(); ?>"></script>
 </body>
 </html>
