@@ -14,17 +14,47 @@
 
 <div id="gradient">
 	<div class="container">
-		<audio controls src="http://developer.mozilla.org/@api/deki/files/2926/=AudioTest_(1).ogg" autoplay id="song">
+		<audio controls src="<?php echo base_url('a.flac'); ?>" autoplay id="song">
 		  O seu navegador não suporta o elemento <code>audio</code>.
 		</audio>
 
 		<div class="lyrics">
 			<div class="content">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quia itaque officia qui, ratione voluptatibus ad aut, temporibus illo blanditiis quis. Id laborum deleniti culpa officia provident numquam cum labore.
-				Lorem ipsum dolor _____ sit amet, consectetur adipisicing elit. Ipsam quia itaque officia qui, ratione voluptatibus ad aut, temporibus illo blanditiis quis. Id laborum deleniti culpa officia provident numquam cum labore.
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quia itaque officia qui, ratione voluptatibus ad aut, temporibus illo blanditiis quis. Id laborum deleniti culpa officia provident numquam cum labore.
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quia itaque officia qui, ratione voluptatibus ad aut, temporibus illo blanditiis quis. Id laborum deleniti culpa officia provident numquam cum labore.
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam quia itaque officia qui, ratione voluptatibus ad aut, temporibus illo blanditiis quis. Id laborum deleniti culpa officia provident numquam cum labore.
+				Enquanto você<br>
+				Se esforça pra ser<br>
+				Um sujeito normal<br>
+				E fazer tudo igual<br>
+				Eu do meu lado<br>
+				Aprendendo a ser louco<br>
+				Um maluco total<br>
+				Na loucura real<br>
+
+				<!-- <br> -->
+
+				Controlando<br>
+				A minha ____<br>
+				Misturada<br>
+				Com minha ____<br>
+				Vou ficar<br>
+				Ficar com certeza<br>
+				Maluco ____<br>
+				Eu vou ficar<br>
+				Ficar com certeza<br>
+				Maluco beleza<br>
+
+				<?php /* ?>
+				Controlando<br>
+				A minha (((maluquez)))
+				Misturada<br>
+				Com minha (((lucidez)))
+				Vou ficar<br>
+				Ficar com certeza<br>
+				Maluco (((beleza)))
+				Eu vou ficar<br>
+				Ficar com certeza<br>
+				Maluco beleza<br>
+				<?php */ ?>
+
 			</div>
 		</div>
 
