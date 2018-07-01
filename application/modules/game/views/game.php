@@ -18,6 +18,8 @@
 		  O seu navegador não suporta o elemento <code>audio</code>.
 		</audio>
 
+		<!-- <div class="init">Iniciar</div> -->
+
 		<div class="lyrics">
 			<div class="content">
 				Enquanto você<br>
@@ -32,12 +34,12 @@
 				<!-- <br> -->
 
 				Controlando<br>
-				A minha ____<br>
+				A minha <span class="trecho1">____</span><br>
 				Misturada<br>
-				Com minha ____<br>
+				Com minha <span class="trecho2">____</span><br>
 				Vou ficar<br>
 				Ficar com certeza<br>
-				Maluco ____<br>
+				Maluco <span class="trecho3">____</span><br>
 				Eu vou ficar<br>
 				Ficar com certeza<br>
 				Maluco beleza<br>
@@ -59,13 +61,13 @@
 		</div>
 
 		<form action="<?php echo site_url('game/verify-word'); ?>" method="POST" id="input">
-			<input type="text" name="res">
+			<input type="text" name="res" disabled="true">
 			<button type="submit">></button>
 		</form>
 	</div>	
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-<script src="<?php echo base_url() . 'application/modules/game/assets/js/game.js?v=0.01'; ?>"></script>
+<script src="<?php echo base_url() . 'application/modules/game/assets/js/game.js?v=0.03'; ?>"></script>
 </body>
 </html>
